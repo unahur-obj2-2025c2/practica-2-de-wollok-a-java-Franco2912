@@ -21,6 +21,7 @@ public class EscuadronTest {
     Escuadron escuadronAvanzado = new Escuadron();
     private final Dron dronComercial = new DronComercial(2, 10);
     private final Dron dronSeguridad = new DronDeSeguridad(8, 52);
+    private final Dron dronDeExploracion = new DronDeSeguridad(8, 30);
 
     private final MisionVigilancia   misionVigilancia   = new MisionVigilancia();
     private final MisionDeTransporte misionTransporte = new MisionDeTransporte();
@@ -40,10 +41,14 @@ public class EscuadronTest {
 
         dronComercial.setMision(misionTransporte);
         dronSeguridad.setMision(misionVigilancia);
+        dronDeExploracion.setMision(misionExploracion);
 
         escuadronComercial.agregarDron(dronComercial);
+
         escuadronAvanzado.agregarDron(dronSeguridad);
         escuadronAvanzado.agregarDron(dronComercial);
+        escuadronAvanzado.agregarDron(dronDeExploracion);
+        
     }
 
     @Test()
